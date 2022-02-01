@@ -2,6 +2,7 @@ const requestHandler = (req, res) => {
   const path = req.url;
 
   if (path === "/") {
+    res.setHeader("Content-Type", "text/html");
     res.write(`
       <html>
         <title>My Basics Assignment</title>
@@ -33,6 +34,7 @@ const requestHandler = (req, res) => {
   }
 
   if (path === "/users") {
+    res.setHeader("Content-Type", "text/html");
     res.write(`
       <html>
         <title>Users</title>
