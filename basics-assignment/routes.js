@@ -19,6 +19,19 @@ const requestHandler = (req, res) => {
     return res.end();
   }
 
+  if (path === "/create-user") {
+    const body = [];
+
+    req.on("data", (chunk) => body.push(chunk));
+    return req.on("end", () => {
+      const parsedBody = Buffer.concat(body).toString();
+      const username = parsedBody.split("=")[1];
+      console.log("Username: ", username);
+      res.writeHead(302, { location: "/" });
+      return res.end();
+    });
+  }
+
   if (path === "/users") {
     res.write(`
       <html>
