@@ -1,3 +1,4 @@
 /node_modules
 /basics/message.txt
 /*/node_modules
+/*/*/node_modules
